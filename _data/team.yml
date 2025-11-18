@@ -1,0 +1,88 @@
+pesquisadores:
+  - name: "Celso Jorge Villas-Bôas"
+    role: "Pesquisador Principal"
+    avatar: "/assets/team/prof-celso.jpg"
+    tags:
+      - "Tag 1"
+      - "Tag 2"
+    links:
+      lattes: "http://lattes.cnpq.br/5700887540085418"
+      orcid: "Test"
+
+
+doutorado:
+  - name: "Alexandre Cesar Ricardo"
+    role: "Doutorando"
+    avatar: "/assets/team/alexandre.jpeg"
+    tags:
+
+
+  - name: "Bruno A. V. N. Silva"
+    role: "Doutorando"
+    avatar: "/assets/team/bruno.jpeg"
+    tags:
+
+
+  - name: "Ciro Micheletti Diniz"
+    role: "Doutorando"
+    avatar: "/assets/team/ciro.jpeg"
+    tags:
+
+
+  - name: "Gabriel P. L. Fernandes"
+    role: "Doutorando"
+    initials: "GF"
+    tags:
+
+  - name: "Gubio Gomes de Lima"
+    role: "Doutorando"
+    avatar: "/assets/team/gubio.jpeg"
+    tags:
+
+
+  - name: "Lucas Ribeiro da Silva Santos"
+    role: "Doutorando"
+    initials: "LS"
+    avatar: "assets/team/lucas.jpeg"
+    tags:
+
+
+  - name: "Luiz O. R. Solak"
+    role: "Doutorando"
+    initials: "LS"
+    avatar: "assets/team/luiz.jpg"
+    tags:
+
+
+  - name: "Nicolas A. C. Carpio"
+    role: "Doutorando"
+    initials: "NC"
+    tags:
+
+
+  - name: "Sinara Santos Dourado"
+    role: "Doutoranda"
+    initials: "SD"
+    avatar: "/assets/team/sinara.jpg"
+    tags:
+
+
+
+mestrado:
+  - name: "Amanda G. Valério"
+    role: "Mestranda"
+    avatar: "/assets/team/amanda.jpeg"
+    tags:
+
+
+  - name: "Matheus da Silva Fonseca"
+    role: "Mestrando"
+    initials: "MF"
+    tags:
+
+
+  - name: "Rodrigo Pereira Silva"
+    role: "Mestrando"
+    initials: "RS"
+    tags:
+

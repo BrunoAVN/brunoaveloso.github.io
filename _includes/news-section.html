@@ -1,0 +1,63 @@
+<section id="news" class="section">
+    <div class="section-container">
+        <div class="section-header">
+            <h2 class="section-title">Notícias</h2>
+            <p class="section-subtitle">Acompanhe as últimas atualizações e descobertas do grupo.</p>
+        </div>
+
+        <div class="news-grid">
+            {% assign recent_posts = site.posts | slice: 0, 3 %}
+            
+            {% for post in recent_posts %}
+            <article class="news-card">
+                {% if post.image %}
+                <div class="news-image" style="background-image: url('{{ post.image }}')"></div>
+                {% else %}
+                <div class="news-image news-image-placeholder">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/>
+                        <circle cx="9" cy="9" r="2"/>
+                        <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>
+                    </svg>
+                </div>
+                {% endif %}
+                
+                <div class="news-content">
+                    <div class="news-meta">
+                        <time datetime="{{ post.date | date_to_xmlschema }}">
+                            {{ post.date | date: "%d/%m/%Y" }}
+                        </time>
+                        <div class="news-categories">
+                            {% for cat in post.categories %}
+                            <span class="news-category">{{ cat }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <h3 class="news-title">
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+                    </h3>
+                    
+                    <p class="news-excerpt">
+                        {% if post.excerpt %}
+                            {{ post.excerpt | strip_html | truncatewords: 25 }}
+                        {% else %}
+                            {{ post.content | strip_html | truncatewords: 25 }}
+                        {% endif %}
+                    </p>
+                    
+                    <a href="{{ post.url }}" class="news-read-more">
+                        Ler mais →
+                    </a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        
+        {% if site.posts.size > 3 %}
+        <div class="news-view-all">
+            <a href="/blog.html" class="btn-secondary">Ver todas as notícias</a>
+        </div>
+        {% endif %}
+    </div>
+</section>

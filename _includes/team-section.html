@@ -1,0 +1,84 @@
+<section id="team" class="section section-gray">
+    <div class="section-container">
+        <div class="section-header">
+            <h3 class="section-title">Equipe & Colaboradores</h3>
+            <p class="section-subtitle">Docentes, estudantes e parceiros envolvidos nas atividades do grupo.</p>
+        </div>
+
+        {% for category in site.data.team %}
+            {% assign key = category[0] %}
+            {% assign members = category[1] %}
+
+            <h4 class="team-subtitle">{{ key | replace: "_", " " | capitalize }}</h4>
+
+            <div class="team-grid">
+
+                {% for p in members %}
+                <div class="person-card">
+
+                    {% if p.avatar %}
+                        <div class="person-avatar img" style="background-image:url('{{ p.avatar }}')"></div>
+                    {% else %}
+                        <div class="person-avatar">
+                            {{ p.initials }}
+                        </div>
+                    {% endif %}
+
+                    <div class="person-info">
+                        <div class="person-name">{{ p.name }}</div>
+                        <div class="person-role">{{ p.role }}</div>
+
+                        {% if p.tags %}
+                        <ul class="person-tags">
+                            {% for t in p.tags %}
+                                <li>{{ t }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+
+{% if p.links %}
+<div class="person-links">
+
+    {% for link in p.links %}
+        {% assign label = link[0] %}
+        {% assign url = link[1] %}
+        
+        <a href="{{ url }}" target="_blank" class="person-link-icon">
+
+            {% case label %}
+            
+            {% when "lattes" %}
+            <!-- Lattes Icon -->
+            <i class="ai ai-lattes ai-1x"></i>
+
+            {% when "orcid" %}
+            <!-- ORCID Icon -->
+            <i class="ai ai-orcid ai-1x"></i>
+
+
+            {% when "scholar" %}
+            <!-- Google Scholar Icon -->
+            <i class="ai ai-google-scholar ai-1x"></i>
+
+            {% when "website" %}
+            <!-- Website / Globe Icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 2c1.1 0 2.1.3 3 .8A13 13 0 0112 11a13 13 0 01-3-6.2A7.9 7.9 0 0112 4zm-5.2 2.3A14.5 14.5 0 008.5 12a14.5 14.5 0 00-1.7 5.7A8 8 0 016.8 6.3zM12 20a7.9 7.9 0 01-3-.8A13 13 0 0112 13a13 13 0 013 6.2 7.9 7.9 0 01-3 .8zm5.2-2.3A14.5 14.5 0 0015.5 12a14.5 14.5 0 001.7-5.7 8 8 0 01-.8 11.4z"/>
+            </svg>
+
+            {% endcase %}
+
+        </a>
+    {% endfor %}
+</div>
+{% endif %}
+
+                    </div>
+
+                </div>
+                {% endfor %}
+
+            </div>
+        {% endfor %}
+    </div>
+</section>

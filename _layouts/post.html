@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<article class="post-page">
+    <div class="post-container">
+        <div class="post-hero">
+            {% if page.image %}
+            <div class="post-featured-image" style="background-image: url('{{ page.image | absolute_url }}')"></div>
+            {% endif %}
+            
+            <div class="post-meta">
+                <time datetime="{{ page.date | date_to_xmlschema }}">
+                    {{ page.date | date: "%d de %B de %Y" }}
+                </time>
+                <div class="news-categories">
+                    {% for cat in page.categories %}
+                    <span class="news-category">{{ cat }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <h1 class="post-title">{{ page.title }}</h1>
+        </div>
+        
+        <div class="post-content">
+            {{ content }}
+        </div>
+        
+        <div class="post-footer">
+            <a href="/blog.html" class="btn-secondary">← Voltar para notícias</a>
+        </div>
+    </div>
+</article>
