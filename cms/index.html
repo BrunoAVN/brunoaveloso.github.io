@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>QUANTA CMS</title>
+  <!-- Pages CMS (módulo ES) -->
+  <script type="module" src="https://unpkg.com/@github/pages-cms@latest"></script>
+  <style>
+    /* Pequeno reset visual para o CMS */
+    body { font-family: Inter, system-ui, sans-serif; margin:0; background:#f7fafc; }
+    pages-cms { display:block; min-height:100vh; }
+  </style>
+</head>
+<body>
+  <pages-cms
+    owner="BrunoAVN"
+    repo="brunoaveloso.github.io"
+    branch="main"
+    client-id="Iv23liG09EOq2YVr2m1r"
+    path="_posts"
+    site-base-url="https://brunoavn.github.io/"
+    >
+  </pages-cms>
+
+  <!-- Exemplo de configuração alternativa com collections (opcional):
+  <pages-cms
+    owner="BrunoAVN"
+    repo="brunoaveloso.github.io"
+    branch="main"
+    client-id="SEU_CLIENT_ID_AQUI"
+    site-base-url="https://brunoavn.github.io/"
+    collections='[
+      {"name":"Posts","path":"_posts"},
+      {"name":"Team","path":"_data/team.yml", "format":"yaml"}
+    ]'>
+  </pages-cms>
+  -->
+</body>
+</html>
+
